@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
+var wiredep = require('wiredep').stream;
 
 var tsSource = [
     "app/client/**/*.ts",
@@ -15,4 +16,10 @@ gulp.task('compile-ts', function() {
         .pipe(ts(tsProject));
 
     return tsResult.js.pipe(gulp.dest('app/client/'));
+});
+
+gulp.task('bower', function () {
+    return gulp.src('./app/client/index.html')
+        .pipe(wiredep())
+        .pipe(gulp.dest('./app/client'));
 });

@@ -1,0 +1,19 @@
+{
+  "name": "First",
+  "version": "0.0.0",
+  "authors": [
+    "thomashellum <thomashellum@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.1.0",
+    "paper-elements": "polymerElements/paper-elements#~1.0.4"
+  }
+}

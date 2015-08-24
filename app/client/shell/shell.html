@@ -1,3 +1,26 @@
 <template>
-    <h1>This is my shell for: ${title}</h1>
+    <paper-drawer-panel>
+        <div drawer>
+            <div class="layout vertical" style="height: 100%">
+                <paper-toolbar>
+                    <div class="title">Book designer</div>
+                </paper-toolbar>
+                <paper-menu class="flex" style="height: 100%;">
+                    <paper-item repeat.for="route of router.navigation"
+                                click.trigger="$parent.navigate(route.href)"
+                                class.bind="route.isActive ? 'iron-selected' : ''">
+                        ${route.title}
+                    </paper-item>
+                </paper-menu>
+            </div>
+        </div>
+        <div main>
+            <div class="layout vertical">
+                <paper-toolbar>
+                </paper-toolbar>
+                <router-view class="flex">
+                </router-view>
+            </div>
+        </div>
+    </paper-drawer-panel>
 </template>
